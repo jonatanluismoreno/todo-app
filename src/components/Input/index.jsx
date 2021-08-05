@@ -1,5 +1,7 @@
 import React, { useState } from 'react'
 
+import './styles.css'
+
 export default function Input({onSubmitTask}) {
 
     const handleSubmit = event => {
@@ -11,10 +13,8 @@ export default function Input({onSubmitTask}) {
     return (
         <div className="input--container">
             <form onSubmit={handleSubmit}>
-                <div>
-                    <label htmlFor="task">  </label>
-                    <input id="textInput" type="text" placeholder="Type something" />
-                </div>
+                <label htmlFor="task"></label>
+                <input className="input" id="textInput" type="text" placeholder="Create a new todo" />
             </form>
         </div>
     )

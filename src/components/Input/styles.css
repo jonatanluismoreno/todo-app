@@ -1,0 +1,15 @@
+.input--container {
+    padding-bottom: 40px;
+}
+
+.input {
+    font-family: 'Josefin Sans',
+    sans-serif;
+    font-weight: 400;
+    font-size: 17px;
+    color: white;
+    width: 400px;
+    height: 50px;
+    background-color: hsl(235, 24%, 19%);
+    text-indent: 30px;
+}

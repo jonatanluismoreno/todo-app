@@ -2,13 +2,13 @@ import React from "react";
 
 import "./styles.css";
 
-import { data } from "../../Example/fakeData.json";
+
 import Task from "../Task";
 
-export default function TaskList() {
+export default function TaskList(props) {
     return (
         <div className="tasklist--container">
-            {data.map((item) => (
+            {props.list.map((item) => (
                 <Task key={item.id} text={item.text} />
             ))}
     </div>

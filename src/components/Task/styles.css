@@ -1,0 +1,8 @@
+.task--container {
+    border: .1px;
+    border-style: groove;
+    border-color: hsl(234, 39%, 85%);
+    background-color: hsl(237, 14%, 26%);
+    width: 400px;
+    height: 50px;
+}
