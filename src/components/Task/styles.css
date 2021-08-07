@@ -1,8 +1,36 @@
 .task--container {
+    display: flex;
     border: .1px;
     border-style: groove;
     border-color: hsl(234, 39%, 85%);
     background-color: hsl(237, 14%, 26%);
     width: 400px;
     height: 50px;
+    text-align: left;
+    text-indent: 30px;
+    color: azure;
+}
+
+.task--check--false {
+    stroke: transparent;
+}
+
+.task--button {
+    outline-style:initial;
+    border-radius: 100px;
+    cursor: pointer;
+    width: 22px;
+    height: 20px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    margin-top: 15px;
+    margin-left: 10px;
+    display: inline-block;
+    background: blueviolet;
+    border-color: blueviolet;
+    border-image-width: 10px;
+    border-image: none;
+    border-width: 1px;
+    border-style: solid;
+    background: transparent;
 }

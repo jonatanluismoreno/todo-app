@@ -11,6 +11,9 @@ export default function TaskList(props) {
             {props.list.map((item) => (
                 <Task key={item.id} text={item.text} />
             ))}
+            <div className="tasklist--footer">
+                
+            </div>
     </div>
     );
 }

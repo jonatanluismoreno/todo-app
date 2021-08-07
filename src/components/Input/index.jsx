@@ -9,6 +9,7 @@ export default function Input({onSubmitTask}) {
         event.preventDefault()
         console.log(inputRef.current.value)
         onSubmitTask(inputRef.current.value)
+        inputRef.current.value = ""
         // Preguntarle a 9gu xd
         //onSubmitTask(event.currentTarget.elements.textInput.value)
     }

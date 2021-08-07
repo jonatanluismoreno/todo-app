@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import { nanoid } from "nanoid";
 
 import "./App.css";
-import { data } from "../src/Example/fakeData.json";
 
 import Input from "./components/Input";
 import TaskList from "./components/TasksList";
 
 function App() {
   const [publications, setPublications] = useState([]);
+  
   function addPublications(p) {
     setPublications([
       ...publications,
@@ -18,12 +18,7 @@ function App() {
       },
     ]);
   }
-
-  // useEffect((p) => {
-  //   setPublications(publications.concat([p]))
-  // }, [publicatiozzns])
-
-  //console.log(publications);
+  
   return (
     <div className="app--container">
       <div className="app--header">
