@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { nanoid } from "nanoid";
 
 import "./App.css";
@@ -8,17 +8,26 @@ import TaskList from "./components/TasksList";
 
 function App() {
   const [publications, setPublications] = useState([]);
-  
+
   function addPublications(p) {
     setPublications([
       ...publications,
       {
         id: nanoid(),
         text: p,
+        active: false,
       },
     ]);
   }
-  
+
+  function changeActiveStatus(key) {
+    publications.forEach((element) => {
+      if (element.id === key) {
+        console.log(element.active);
+      }
+    });
+  }
+
   return (
     <div className="app--container">
       <div className="app--header">
@@ -26,7 +35,7 @@ function App() {
         <Input onSubmitTask={addPublications} />
       </div>
       <div className="app--todos">
-        <TaskList list={publications} />
+        <TaskList list={publications} funct={changeActiveStatus} />
       </div>
     </div>
   );

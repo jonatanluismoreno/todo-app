@@ -1,0 +1,7 @@
+.button--p {
+    cursor: pointer;
+}
+
+.button--p:hover {
+    color:azure;
+}
