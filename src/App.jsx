@@ -8,6 +8,7 @@ import TaskList from "./components/TasksList";
 
 function App() {
   const [publications, setPublications] = useState([]);
+  const [showPublications, setShowPublications] = useState(publications);
 
   function addPublications(p) {
     setPublications([
@@ -17,7 +18,15 @@ function App() {
         text: p,
         active: false,
       },
-    ]);
+    ])
+    setShowPublications([
+      ...publications,
+      {
+        id: nanoid(),
+        text: p,
+        active: false,
+      },
+    ])
   }
 
   const changeActiveStatus = (id) => {
@@ -34,6 +43,29 @@ function App() {
       }
     })
     setPublications(newArray)
+    setShowPublications(newArray)
+  }
+
+  const showAll = () => {
+    setShowPublications(publications)
+  }
+
+  const showActive = () => {
+    const newArray = [...publications].filter(item => {
+      if (!item.active) {
+        return item
+      }
+    })
+    setShowPublications(newArray)
+  }
+
+  const showCompleted = () => {
+    const newArray = [...publications].filter(item => {
+      if (item.active) {
+        return item
+      }
+    })
+    setShowPublications(newArray)
   }
 
   return (
@@ -43,7 +75,7 @@ function App() {
         <Input onSubmitTask={addPublications} />
       </div>
       <div className="app--todos">
-        <TaskList list={publications} toggleStatus={changeActiveStatus} deleteCompleted={deleteCompleted} />
+        <TaskList list={showPublications} toggleStatus={changeActiveStatus} showAll={showAll} showActive={showActive} showCompleted={showCompleted} deleteCompleted={deleteCompleted} />
       </div>
     </div>
   );

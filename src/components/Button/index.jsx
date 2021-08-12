@@ -2,20 +2,20 @@ import React from 'react'
 
 import './styles.css'
 
-export default function Button(props) {
+export default function Button({ text, clickeable, buttonFunction }) {
     
     function handleClick() {
-        props.buttonFunction()
+        buttonFunction()
     }
 
     let buttonClass = ""
-    if (!props.clickeable) {
+    if (!clickeable) {
         buttonClass = "clickeable"
     }
     return (
         <>
             <p className={"button--p" + buttonClass} onClick={handleClick} >
-                {props.text}
+                {text}
             </p>
         </>
     )
