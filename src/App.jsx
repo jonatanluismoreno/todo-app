@@ -20,12 +20,20 @@ function App() {
     ]);
   }
 
-  function changeActiveStatus(key) {
-    publications.forEach((element) => {
-      if (element.id === key) {
-        console.log(element.active);
+  const changeActiveStatus = (id) => {
+    const newArray = [...publications]
+    const currentItem = newArray.find((item) => item.id === id)
+    currentItem.active = !currentItem.active
+    setPublications(newArray)
+  }
+
+  const deleteCompleted = () => {
+    const newArray = [...publications].filter(item => {
+      if (!item.active) {
+        return item
       }
-    });
+    })
+    setPublications(newArray)
   }
 
   return (
@@ -35,7 +43,7 @@ function App() {
         <Input onSubmitTask={addPublications} />
       </div>
       <div className="app--todos">
-        <TaskList list={publications} funct={changeActiveStatus} />
+        <TaskList list={publications} toggleStatus={changeActiveStatus} deleteCompleted={deleteCompleted} />
       </div>
     </div>
   );

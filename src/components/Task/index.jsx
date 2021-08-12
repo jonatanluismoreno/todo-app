@@ -2,15 +2,14 @@ import React, { useState } from 'react'
 import './styles.css'
 
 import { ReactComponent as IconCheck } from '../../assets/images/icon-check.svg'
-import { ReactComponent as IconCross } from '../../assets/images/icon-cross.svg'
+//import { ReactComponent as IconCross } from '../../assets/images/icon-cross.svg'
 
 export default function Task(props) {
-    // Este State lo utilizo para determinar si se dibuja, o no, el icon-check.svg
 
     function handleButton() {
-        props.funct(props.id)
-        console.log(props);
+        props.toggleStatus(props.id)
     }
+
 
     return (
         <div className="task--container">

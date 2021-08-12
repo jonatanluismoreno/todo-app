@@ -10,14 +10,14 @@ export default function TaskList(props) {
     return (
         <div className="tasklist--container">
             {props.list.map((item) => (
-                <Task key={item.id} text={item.text} funct={props.funct} id={item.id} active={item.active} />
+                <Task key={item.id} text={item.text} toggleStatus={props.toggleStatus} id={item.id} active={item.active} />
             ))}
             <div className="tasklist--footer">
-                <Button text={props.list.length + " items left"} />
-                <Button text="All"/>
-                <Button text="Active"/>
-                <Button text="Completed"/>
-                <Button text="Clear Completed"/>         
+                <Button text={props.list.length + " items left"} clickeable={false} />
+                <Button text="All" clickeable buttonFunction={props.showAll} />
+{/*                 <Button text="Active" clickeable showActive={props.showActive}/>
+                <Button text="Completed" clickeable showCompleted={props.showCompleted} /> */}
+                <Button text="Clear Completed" clickeable buttonFunction={props.deleteCompleted} />         
             </div>
     </div>
     );

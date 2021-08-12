@@ -5,3 +5,7 @@
 .button--p:hover {
     color:azure;
 }
+
+.clickeable {
+    cursor: auto;
+}
