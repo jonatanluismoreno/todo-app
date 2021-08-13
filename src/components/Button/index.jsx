@@ -14,9 +14,17 @@ export default function Button({ text, clickeable, buttonFunction }) {
     }
     return (
         <>
-            <p className={"button--p" + buttonClass} onClick={handleClick} >
-                {text}
-            </p>
+            {
+                clickeable 
+                ? 
+                    <p className="button--p clickeable" onClick={handleClick} >
+                    {text} 
+                    </p>
+                : 
+                    <p className="button--p" >
+                    {text} 
+                    </p>
+            }
         </>
     )
 }

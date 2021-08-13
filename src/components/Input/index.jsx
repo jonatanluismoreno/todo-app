@@ -7,11 +7,8 @@ export default function Input({onSubmitTask}) {
 
     const handleSubmit = event => {
         event.preventDefault()
-        console.log(inputRef.current.value)
         onSubmitTask(inputRef.current.value)
         inputRef.current.value = ""
-        // Preguntarle a 9gu xd
-        //onSubmitTask(event.currentTarget.elements.textInput.value)
     }
     return (
         <div className="input--container">

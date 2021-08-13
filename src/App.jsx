@@ -10,12 +10,12 @@ function App() {
   const [publications, setPublications] = useState([]);
   const [showPublications, setShowPublications] = useState(publications);
 
-  function addPublications(p) {
+  function addPublications(t) {
     setPublications([
       ...publications,
       {
         id: nanoid(),
-        text: p,
+        text: t,
         active: false,
       },
     ])
@@ -23,7 +23,7 @@ function App() {
       ...publications,
       {
         id: nanoid(),
-        text: p,
+        text: t,
         active: false,
       },
     ])
@@ -34,6 +34,7 @@ function App() {
     const currentItem = newArray.find((item) => item.id === id)
     currentItem.active = !currentItem.active
     setPublications(newArray)
+    setShowPublications(newArray)
   }
 
   const deleteCompleted = () => {
@@ -75,7 +76,7 @@ function App() {
         <Input onSubmitTask={addPublications} />
       </div>
       <div className="app--todos">
-        <TaskList list={showPublications} toggleStatus={changeActiveStatus} showAll={showAll} showActive={showActive} showCompleted={showCompleted} deleteCompleted={deleteCompleted} />
+        <TaskList list={showPublications} itemsLeft={publications.length} toggleStatus={changeActiveStatus} showAll={showAll} showActive={showActive} showCompleted={showCompleted} deleteCompleted={deleteCompleted} />
       </div>
     </div>
   );

@@ -1,11 +1,12 @@
 .button--p {
-    cursor: pointer;
+    cursor: auto;
+    color: hsl(234, 39%, 85%);
 }
 
 .button--p:hover {
-    color:azure;
+    color:hsl(236, 33%, 92%);
 }
 
 .clickeable {
-    cursor: auto;
+    cursor: pointer;
 }

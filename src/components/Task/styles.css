@@ -8,7 +8,10 @@
     height: 50px;
     text-align: left;
     text-indent: 30px;
-    color: azure;
+    color: hsl(234, 39%, 85%);
+    font-family: 'Josefin Sans',
+    sans-serif;
+    font-weight: 400;
 }
 
 .task--check--false {
