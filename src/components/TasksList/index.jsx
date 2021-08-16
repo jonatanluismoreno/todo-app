@@ -41,7 +41,7 @@ export default function TaskList({ list, itemsLeft, toggleStatus, showAll, showA
         // add it to the drop target
         // Podría solucionar esto modificando el Array mediante el setPublications()
         // Buscar otra solución
-        props.changeOrderPublications()
+        changeOrderPublications()
         //e.target.appendChild(draggable);
 
         // display the draggable element
@@ -54,7 +54,7 @@ export default function TaskList({ list, itemsLeft, toggleStatus, showAll, showA
             <ul className="tasklist--container">
                 {list.map(({ id, text, active }) => (
                     <li key={id} className="tasklist--item" >
-                        <Task text={text} toggleStatus={toggleStatus} id={id} active={active} changeOrderPublications={changeOrderPublications} handleDragStart={handleDragStart} handleDragEnter={handleDragEnter} handleDragOver={handleDragOver} handleDragLeave={handleDragLeave} handleDrop={handleDrop} />
+                        <Task text={text} toggleStatus={toggleStatus} id={id} active={active} handleDragStart={handleDragStart} handleDragEnter={handleDragEnter} handleDragOver={handleDragOver} handleDragLeave={handleDragLeave} handleDrop={handleDrop} />
                     </li>
                 ))}
             </ul>

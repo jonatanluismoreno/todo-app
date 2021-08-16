@@ -20,3 +20,11 @@
     width: 400px;
     height: 40px;
 }
+
+.hide {
+    display: none;
+}
+
+.drag-over {
+    border: dashed 3px red;
+}

@@ -5,7 +5,7 @@ import { ReactComponent as IconCheck } from '../../assets/images/icon-check.svg'
 //import { ReactComponent as IconCross } from '../../assets/images/icon-cross.svg'
 // Agregar esto acá, en los hover
 
-export default function Task({ text, toggleStatus, id, active }) {
+export default function Task({ text, toggleStatus, id, active, handleDragStart, handleDragEnter, handleDragOver, handleDragLeave, handleDrop }) {
 
     function handleButton() {
         toggleStatus(id)
