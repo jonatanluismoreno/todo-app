@@ -1,7 +1,16 @@
-.tasklist--container {
+.tasklist--section {
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+
+.tasklist--container {
+    align-items: center;
+    padding: 0;
+}
+
+.tasklist--item {
+    list-style-type: none;
 }
 
 .tasklist--footer {

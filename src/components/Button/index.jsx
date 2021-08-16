@@ -7,13 +7,9 @@ export default function Button({ text, clickeable, buttonFunction }) {
     function handleClick() {
         buttonFunction()
     }
-
-    let buttonClass = ""
-    if (!clickeable) {
-        buttonClass = "clickeable"
-    }
+    
     return (
-        <>
+        <button disabled className="button--container">
             {
                 clickeable 
                 ? 
@@ -25,6 +21,6 @@ export default function Button({ text, clickeable, buttonFunction }) {
                     {text} 
                     </p>
             }
-        </>
+        </button>
     )
 }

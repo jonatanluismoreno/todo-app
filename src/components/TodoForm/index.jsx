@@ -1,8 +1,8 @@
-import React, { useState, useRef } from 'react'
+import React, { useRef } from 'react'
 
 import './styles.css'
 
-export default function Input({onSubmitTask}) {
+export default function TodoForm({ onSubmitTask }) {
     const inputRef = useRef(null)
 
     const handleSubmit = event => {

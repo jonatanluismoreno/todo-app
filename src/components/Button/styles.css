@@ -1,5 +1,8 @@
+.button--container {
+    background-color: #39394b;
+}
+
 .button--p {
-    cursor: auto;
     color: hsl(234, 39%, 85%);
 }
 
